@@ -1,0 +1,13 @@
+/target
+# Blobs e arquivos de fabricante NUNCA entram neste repositório (ADR-014).
+/vendor/
+*.ko
+*.so
+*.bin
+*.img
+*.mbn
+*.elf
+*.apk
+*.zip
+tcl*-vendor/
+*-vendor/

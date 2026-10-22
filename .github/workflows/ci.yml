@@ -1,0 +1,16 @@
+name: CI
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    env:
+      CARGO_NET_GIT_FETCH_WITH_CLI: "true"
+    steps:
+      - uses: actions/checkout@v4
+      # O conexus-mobile-os é privado: o cargo precisa de uma credencial de leitura para ele.
+      - name: Credencial de leitura do conexus-mobile-os
+        run: git config --global url."https://x-access-token:${{ secrets.MOBILE_OS_READ_TOKEN }}@github.com/conexus-systems/".insteadOf "https://github.com/conexus-systems/"
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --locked
