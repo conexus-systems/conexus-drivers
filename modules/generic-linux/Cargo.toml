@@ -1,0 +1,12 @@
+[package]
+name = "conexus-driver-generic-linux"
+version = "0.0.1"
+description = "Módulos genéricos sobre interfaces padrão do kernel Linux (térmico e fontes de energia). Sem blobs de fabricante"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+conexus-driver-common = { path = "../common" }
+conexus-core = { git = "https://github.com/conexus-systems/conexus-mobile-os", rev = "02ecbff7e4c38d550e4afe98a1e5556a61a02dbf" }

@@ -11,10 +11,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "conexus-driver-common"
+version = "0.0.1"
+
+[[package]]
+name = "conexus-driver-generic-linux"
+version = "0.0.1"
+dependencies = [
+ "conexus-core",
+ "conexus-driver-common",
+]
+
+[[package]]
 name = "conexus-driver-google-akita"
 version = "0.0.1"
 dependencies = [
  "conexus-core",
+ "conexus-driver-common",
 ]
 
 [[package]]

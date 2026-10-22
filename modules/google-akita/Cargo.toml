@@ -8,4 +8,5 @@ repository.workspace = true
 rust-version.workspace = true
 
 [dependencies]
+conexus-driver-common = { path = "../common" }
 conexus-core = { git = "https://github.com/conexus-systems/conexus-mobile-os", rev = "02ecbff7e4c38d550e4afe98a1e5556a61a02dbf" }

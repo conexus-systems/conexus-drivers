@@ -1,0 +1,10 @@
+[package]
+name = "conexus-driver-common"
+version = "0.0.1"
+description = "Tipos comuns dos módulos de driver: Support e Component"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
