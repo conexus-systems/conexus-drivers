@@ -13,14 +13,7 @@ pub const DEVICE: &str = "akita";
 pub const KERNEL_RELEASE_PREFIX: &str = "6.1.";
 pub const KMI: &str = "android14-6.1";
 
-/// Resposta de um componente quando perguntado se funciona.
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub enum Support {
-    /// Funciona e foi testado em aparelho, com evidência. Nenhum componente chega aqui hoje.
-    Supported,
-    /// Não implementado. O motivo explica o que falta.
-    Unsupported(&'static str),
-}
+pub use conexus_driver_common::Support;
 
 /// Componente de hardware coberto pelo módulo.
 pub trait Component {

@@ -1,7 +1,7 @@
 use conexus_core::drivers::{
     DeviceInfo, DriverBundle, DriverError, DriverManager, DriverPackage, DriverVariant, SignatureVerifier,
 };
-use conexus_driver_google_akita::{components, Support, DEVICE, KERNEL_RELEASE_PREFIX, KMI};
+use conexus_driver_google_akita::{components, DEVICE, KERNEL_RELEASE_PREFIX, KMI};
 
 /// Aceita qualquer assinatura: aqui só se testa a validade dos manifests e a seleção do bundle.
 struct AcceptAny;
@@ -32,7 +32,7 @@ fn device(kernel: &str) -> DeviceInfo {
 #[test]
 fn nenhum_componente_declara_suporte_sem_evidencia() {
     for c in components() {
-        assert!(matches!(c.support(), Support::Unsupported(_)), "{} não pode declarar suporte", c.name());
+        assert!(!c.support().is_verified(), "{} não pode declarar suporte sem evidência", c.name());
     }
 }
 
